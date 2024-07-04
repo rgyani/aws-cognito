@@ -20,7 +20,7 @@ To summarize, **Cognito's job is to broker between your app and legitimate authe
 SAML-based authentication can be used to allow AWS Management Console login for non-IAM users.
 * You can use Microsoft Active Directory which implements Security Assertion Markup Language (SAML) as well.
 * You can use Amazon Cognito to deliver temporary, limited-privilege credentials to your application so that your users can access AWS resources.
-* Amazon Cognito identity pools support both authenticated and unauthenticated identities.
+* Amazon Cognito identity pools support **both authenticated and unauthenticated identities**.
 * You can retrieve a unique Amazon Cognito identifier (identity ID) for your end user immediately if you're allowing unauthenticated users or after you've set the login tokens in the credentials provider if you're authenticating users.
 * When you need to easily add authentication to your mobile and desktop app, think Amazon Cognito.
 
