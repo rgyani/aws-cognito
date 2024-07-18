@@ -18,6 +18,7 @@ Lets design a system where the administrator can assign permissions to these use
 ## Functional Requirements
 1. UI should be able to enable disable components based on roles and rights of current logged in user
 2. Should support both AWS API g/w and SpringBoot (ALB)
+3. Admin should be able to assign permissions to each individual users
 
 ## Non-Functional Requirements
 1. Login and role validation should be quick
@@ -71,6 +72,10 @@ Auth.signUp({
 .then(data => console.log(data))
 .catch(err => console.error(err));
 ```
+
+**You can create a seperate Admin/User Management App/Service  which will assign these permissions to the user**
+
+
 
 ### how will user authentication work
 
