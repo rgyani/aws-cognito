@@ -64,6 +64,20 @@ Here’s a table summary describing Cognito User Pool and Identity Pool:
 | Provides OpenID Connect and OAuth standard tokens| |
 | Priced per monthly active user | Free |	
 
+### How they work together
+```
+[User] ──(Logs in via SAML/FB)──> [Cognito User Pool]
+                                         │
+                                   (Creates/Updates User Profile)
+                                         │
+                                   (Returns JWT Tokens)
+                                         │
+[User] ──(Presents JWT Token)───> [Cognito Identity Pool]
+                                         │
+                                   (Assumes IAM Role)
+                                         │
+                                   (Returns Temporary AWS Credentials)
+```
 
 ## AWS Security Token Service (STS)
 AWS Security Token Service (AWS STS) is the service that you can use to create and provide trusted users with temporary security credentials that can control access to your AWS resources.
