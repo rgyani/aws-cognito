@@ -79,6 +79,12 @@ Here’s a table summary describing Cognito User Pool and Identity Pool:
                                    (Returns Temporary AWS Credentials)
 ```
 
+1. User authenticates via Facebook/SAML.
+2. **Cognito User Pool** intercept this, creates/updates a user record in its directory, and hands the frontend app a JWT token.
+3. App takes that JWT token and passes it to the Cognito Identity Pool.
+4. The **Identity Pool** validates the token and vends temporary IAM credentials so your app can talk to S3/DynamoDB securely.
+5. If the app doesn't need to talk to AWS services directly (e.g., it only talks to the backend API that validates JWTs), **you might not even need an Identity Pool at all—a User Pool alone is enough.**
+
 ## AWS Security Token Service (STS)
 AWS Security Token Service (AWS STS) is the service that you can use to create and provide trusted users with temporary security credentials that can control access to your AWS resources.
 
